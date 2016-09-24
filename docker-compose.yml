@@ -1,0 +1,26 @@
+version: '2'
+services:
+  deluge:
+    build: ./deluge
+    volumes:
+     - <local-folder>:/downloads
+     - /etc/localtime:/etc/localtime:ro
+    network_mode: service:hideme
+  nginx:
+    build: ./nginx
+    links:
+      - hideme:deluge
+    ports:
+      - 8112:8112
+      - 58846:58846
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+  hideme:
+    build: ./hideme
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    cap_add:
+      - NET_ADMIN
+    environment:
+      HM_USER: <hide.me-username>
+      HM_PASS: <hide.me-password>
