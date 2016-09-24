@@ -35,9 +35,15 @@ To make sure the IP is set correctly, and different to your hosts IP first go to
 # Stop stack
 To stop the stack, go back into the folder where `docker-compose.yml` is located and type:
 ```shell
-docker-compose down
+docker-compose stop
 ```
 to start it again, type:
 ```shell
-docker-compose up -d
+docker-compose start
+```
+
+# Remove stack
+To completely remove the stack, and everything it created, type:
+```shell
+docker-compose down
 ```
