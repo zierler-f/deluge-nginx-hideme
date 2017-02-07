@@ -11,7 +11,7 @@ Besides Docker and Docker Compose the only other thing needed to run the stack i
 ## Download from Github
 Once the prerequisites are fulfilled, clone this repository by opening a shell, navigate to a location of your choosing and type:
 ```shell
-git clone git@github.com:zierler-f/deluge-nginx-hideme.git
+git clone https://github.com/zierler-f/deluge-nginx-hideme.git
 ```
 ## Change file to work with your setup
 Now navigate into the cloned folder and open the file called 'docker-compose.yml' with the text editor of your choice and make the following changes:
